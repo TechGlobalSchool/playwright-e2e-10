@@ -1,6 +1,7 @@
 // import { chromium } from "@playwright/test";
 const { chromium } = require('@playwright/test')
 
+
 async function visitPage() {
 const browser = await chromium.launch({ headless: false})
 const context = await browser.newContext()
