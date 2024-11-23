@@ -29,4 +29,20 @@ test.describe("Element State", { tag: '@regression' }, () => {
 
     isMessageVisible ? await signInButton.click() : await registerButton.click()
   })
+
+  test('Getting Element State - Checkbox and Radio Buttons', async({ page }) => {
+
+    const apple = page.getByRole('checkbox', { name: 'Apple' })
+    const microsoft = page.getByRole('checkbox', { name: 'Microsoft' })
+    const tesla = page.getByRole('checkbox', { name: 'Tesla' })
+
+    await apple.check()
+    const isAppleChecked = await apple.isChecked()
+
+    if(isAppleChecked) {
+      await microsoft.check()
+    } else {
+      await tesla.check()
+    }
+  })
 })
