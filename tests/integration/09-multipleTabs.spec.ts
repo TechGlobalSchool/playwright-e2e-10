@@ -71,4 +71,19 @@ test.describe("Interacting Multiple Tabs", { tag: "@regression" }, () => {
    * Click on the "Microsoft" link and validate URL contains "Microsoft"
    * Click on the "Tesla" link and validate URL contains "Tesla"
    */
+
+  test("Test Case", async ({ page }) => {
+    const links = ["Apple", "Microsoft"];
+
+    for (const link of links) {
+      const [newTab] = await Promise.all([
+        page.waitForEvent("popup"),
+        clickLink(page, link),
+      ]);
+
+      expect(newTab.url()).toContain(link.toLowerCase());
+
+      await newTab.close()
+    }
+  });
 });
