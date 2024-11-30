@@ -14,6 +14,8 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
 export default defineConfig({
   timeout: 10000,
   testDir: './tests',
+  // globalSetup: 'tests/setup/global.setup.ts',
+  // globalTeardown: '/',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -43,6 +45,7 @@ export default defineConfig({
     // launchOptions: {
     //   slowMo: 300
     // }
+    // storageState: './user-data/loginAuth.json'
   },
 
   /* Configure projects for major browsers */
@@ -52,6 +55,33 @@ export default defineConfig({
       use: { 
         ...devices['Desktop Chrome'],
         viewport: { width: 1920, height: 1080 },
+       },
+    },
+
+    {
+      name: 'setup',
+      testMatch: /global\.setup\.ts/,
+      teardown: 'teardown'
+    },
+
+    {
+      name: 'teardown',
+      testMatch: /global\.teardown\.ts/,
+      use: { 
+        ...devices['Desktop Chrome'],
+        viewport: { width: 1920, height: 1080 },
+        storageState: './user-data/loginAuth.json'
+       },
+    },
+
+    {
+      name: 'loggedIn',
+      testMatch: '**/17-globalSetup.spec.ts',
+      dependencies: ['setup'],
+      use: { 
+        ...devices['Desktop Chrome'],
+        viewport: { width: 1920, height: 1080 },
+        storageState: './user-data/loginAuth.json'
        },
     },
 
