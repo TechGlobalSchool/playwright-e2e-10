@@ -3,7 +3,7 @@ import test, { expect } from "@playwright/test";
 test('Github main page', async({ page }) => {
   await page.goto('https://github.com/')
 
-  const $locator = await page.locator('.HeaderMenu-item .HeaderMenu-link')
+  const $locator = page.locator('.HeaderMenu-item .HeaderMenu-link')
 
   const arr = ['Product', 'Solutions','Resources', 'Open Source','Enterprise', 'Pricing']
 

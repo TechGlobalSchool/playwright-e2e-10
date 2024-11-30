@@ -14,6 +14,7 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
 export default defineConfig({
   timeout: 10000,
   testDir: './tests',
+  snapshotDir: './snapshots',
   // globalSetup: 'tests/setup/global.setup.ts',
   // globalTeardown: '/',
   /* Run tests in files in parallel */
@@ -26,7 +27,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   expect: {
-    timeout: 5 * 1000
+    timeout: 5 * 1000,
   },
   reporter: [
     ['html', { open: 'never' }],
