@@ -12,7 +12,8 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  timeout: 10000,
+  // timeout: 10000,
+  // globalTimeout: 100000,
   testDir: './tests',
   snapshotDir: './snapshots',
   // globalSetup: 'tests/setup/global.setup.ts',
@@ -46,7 +47,9 @@ export default defineConfig({
     // launchOptions: {
     //   slowMo: 300
     // }
-    // storageState: './user-data/loginAuth.json'
+    // storageState: './user-data/loginAuth.json',
+    // actionTimeout: 10000,
+    // navigationTimeout: 10000,
   },
 
   /* Configure projects for major browsers */
