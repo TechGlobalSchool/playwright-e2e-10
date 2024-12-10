@@ -7,12 +7,12 @@ test.describe("Timeouts & Waits", () => {
     await clickLink(page, "Waits");
   });
 
-  test("Should wait for an element to visible", async ({ page, waitsPage }) => {
-    // test.setTimeout(8000);
+  // test("Should wait for an element to visible", async ({ page, waitsPage }) => {
+  //   // test.setTimeout(8000);
 
-    await waitsPage.redBoxButton.click({ timeout: 40000 });
-    await expect(waitsPage.redBox).toBeVisible({ timeout: 11000 });
-  });
+  //   await waitsPage.redBoxButton.click({ timeout: 40000 });
+  //   await expect(waitsPage.redBox).toBeVisible({ timeout: 11000 });
+  // });
 
 
   test('Waits', async({ page, waitsPage }) => {

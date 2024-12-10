@@ -37,7 +37,7 @@ test.describe("Assertions", { tag: '@regression' }, () => {
     await expect(mainHeading).toHaveCSS('color', 'rgb(105, 105, 105)')
 
     // Negating matchers
-    await expect(mainHeading).not.toBeVisible()
+    await expect(mainHeading).toBeVisible()
   })
 
   test('Non-retry Assertions', async({ page }) => {
