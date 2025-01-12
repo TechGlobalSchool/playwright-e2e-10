@@ -1,42 +1,58 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="9.805912000000001">
-<testsuite name="backend/dbConnection.spec.ts" timestamp="2024-12-25T02:42:57.483Z" hostname="chromium" tests="3" failures="0" skipped="0" time="9.018" errors="0">
-<testcase name="DB test with UI › Create a new student" classname="backend/dbConnection.spec.ts" time="2.235">
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="2.68586">
+<testsuite name="api/students.spec.ts" timestamp="2025-01-12T19:38:00.397Z" hostname="chromium" tests="4" failures="0" skipped="0" time="2.383" errors="0">
+<testcase name="Students › Create a new student using POST" classname="api/students.spec.ts" time="0.823">
 <system-out>
-<![CDATA[[
-  {
-    STUDENT_ID: [33m5688[39m,
-    DOB: [35m1990-01-01T06:00:00.000Z[39m,
-    EMAIL: [32m'alicedoe@gmail.com'[39m,
-    FIRST_NAME: [32m'Alice'[39m,
-    LAST_NAME: [32m'Doe'[39m,
-    INSTRUCTOR_ID: [33m1[39m
-  }
-]
+<![CDATA[Status Code:  [33m201[39m
 {
-  STUDENT_ID: [33m5688[39m,
+  STUDENT_ID: [33m6502[39m,
+  DOB: [32m'1990-01-01'[39m,
+  EMAIL: [32m'alicedoe@gmail.com'[39m,
+  FIRST_NAME: [32m'Alice'[39m,
+  LAST_NAME: [32m'Doe'[39m,
+  INSTRUCTOR_ID: [33m2[39m
+}
+Name:  Alice
+1990-01-01 DOB
+{
+  STUDENT_ID: [33m6502[39m,
   DOB: [35m1990-01-01T06:00:00.000Z[39m,
   EMAIL: [32m'alicedoe@gmail.com'[39m,
   FIRST_NAME: [32m'Alice'[39m,
   LAST_NAME: [32m'Doe'[39m,
-  INSTRUCTOR_ID: [33m1[39m
+  INSTRUCTOR_ID: [33m2[39m
 }
-Alice NAME IN THE QUERY
 
-[[ATTACHMENT|../test-results/backend-dbConnection-DB-test-with-UI-Create-a-new-student-chromium/trace.zip]]
+[[ATTACHMENT|../test-results/api-students-Students-Create-a-new-student-using-POST-chromium/trace.zip]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="DB test with UI › Update existing student" classname="backend/dbConnection.spec.ts" time="4.99">
+<testcase name="Students › Create a new student using GET" classname="api/students.spec.ts" time="0.355">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|../test-results/backend-dbConnection-DB-test-with-UI-Update-existing-student-chromium/trace.zip]]
+<![CDATA[{
+  STUDENT_ID: [33m6502[39m,
+  DOB: [32m'1990-01-01T00:00:00.000Z'[39m,
+  EMAIL: [32m'alicedoe@gmail.com'[39m,
+  FIRST_NAME: [32m'Alice'[39m,
+  LAST_NAME: [32m'Doe'[39m,
+  INSTRUCTOR_ID: [33m2[39m,
+  INSTRUCTOR_NAME: [32m'Robert Hass'[39m
+}
+
+[[ATTACHMENT|../test-results/api-students-Students-Create-a-new-student-using-GET-chromium/trace.zip]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="DB test with UI › Delete existing student" classname="backend/dbConnection.spec.ts" time="1.793">
+<testcase name="Students › Update a student we created using PUT" classname="api/students.spec.ts" time="0.645">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|../test-results/backend-dbConnection-DB-test-with-UI-Delete-existing-student-chromium/trace.zip]]
+[[ATTACHMENT|../test-results/api-students-Students-Update-a-student-we-created-using-PUT-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Students › Delete a student UPDATED using DELETE" classname="api/students.spec.ts" time="0.56">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api-students-Students-Delete-a-student-UPDATED-using-DELETE-chromium/trace.zip]]
 ]]>
 </system-out>
 </testcase>
